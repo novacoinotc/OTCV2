@@ -2,9 +2,3 @@
             @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* v2 accent */
-:root { --accent:#1de9b6; }
-.btn-accent { @apply bg-[color:var(--accent)] text-black font-medium px-3 py-2 rounded-xl shadow; }
-.badge { @apply text-xs px-2 py-1 rounded-full bg-white/10 text-slate-200; }
-.card { @apply rounded-2xl border border-white/10 bg-[#0e1628]/70 shadow-lg; }

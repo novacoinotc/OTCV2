@@ -1,3 +1,4 @@
+import MainDashboardV2 from './components/MainDashboardV2';
 import React, { useState, useEffect } from 'react';
 
 import LayoutHeader        from './components/LayoutHeader';
@@ -6,7 +7,6 @@ import GeneralBalanceView  from './components/GeneralBalanceView';
 import ClientsDatabase     from './components/ClientsDatabase';
 import TransactionsView    from './components/TransactionsView';
 import OperationTab        from './components/OperationTab';
-import           from './components/';   // ← BITSO
 
 import { db } from './firebase/config';
 import { collection, doc, getDocs, onSnapshot } from 'firebase/firestore';
