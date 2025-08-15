@@ -15,12 +15,12 @@ const ClientHistoryModal = ({ client, onClose, onUpdateTransaction, onDeleteTran
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl shadow-2xl w-[800px] max-h-[80vh] overflow-hidden flex flex-col">
-        <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+      <div className="bg-[#0e1628] rounded-2xl shadow-2xl w-[800px] max-h-[80vh] overflow-hidden flex flex-col">
+        <div className="p-6 border-b border-white/10 flex justify-between items-center">
           <h2 className="text-2xl font-bold">Historial de {client.name}</h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-black transition-colors"
+            className="text-slate-400 hover:text-black transition-colors"
           >
             ✕
           </button>
@@ -28,12 +28,12 @@ const ClientHistoryModal = ({ client, onClose, onUpdateTransaction, onDeleteTran
 
         <div className="overflow-y-auto flex-grow">
           {sortedTransactions.length === 0 ? (
-            <div className="text-center py-10 text-gray-500">
+            <div className="text-center py-10 text-slate-400">
               No hay transacciones
             </div>
           ) : (
             <table className="w-full">
-              <thead className="sticky top-0 bg-white">
+              <thead className="sticky top-0 bg-[#0e1628]">
                 <tr className="border-b">
                   <th className="p-4 text-left">Fecha</th>
                   <th className="p-4 text-left">Tipo</th>
@@ -46,9 +46,9 @@ const ClientHistoryModal = ({ client, onClose, onUpdateTransaction, onDeleteTran
                 {sortedTransactions.map((transaction) => (
                   <tr
                     key={transaction.id}
-                    className="border-b hover:bg-gray-50 transition-colors"
+                    className="border-b hover:bg-[#0a0f1a] transition-colors"
                   >
-                    <td className="p-4 text-gray-600">
+                    <td className="p-4 text-slate-400">
                       {new Date(transaction.timestamp).toLocaleString()}
                     </td>
                     <td className="p-4">
@@ -65,13 +65,13 @@ const ClientHistoryModal = ({ client, onClose, onUpdateTransaction, onDeleteTran
                     <td className={`
                       p-4 text-right font-semibold
                       ${transaction.amount > 0
-                        ? 'text-green-600'
-                        : 'text-red-600'
+                        ? 'text-emerald-400'
+                        : 'text-rose-400'
                       }
                     `}>
                       ${Math.abs(transaction.amount).toLocaleString()}
                     </td>
-                    <td className="p-4 text-gray-600">
+                    <td className="p-4 text-slate-400">
                       {transaction.concept || '-'}
                     </td>
                     <td className="p-4 text-right">
@@ -89,13 +89,13 @@ const ClientHistoryModal = ({ client, onClose, onUpdateTransaction, onDeleteTran
           )}
         </div>
 
-        <div className="p-4 border-t border-gray-200 flex justify-between items-center">
-          <div className="text-gray-600">
+        <div className="p-4 border-t border-white/10 flex justify-between items-center">
+          <div className="text-slate-400">
             Total de transacciones: {sortedTransactions.length}
           </div>
           <div className={`
             text-xl font-bold
-            ${client.balance >= 0 ? 'text-green-600' : 'text-red-600'}
+            ${client.balance >= 0 ? 'text-emerald-400' : 'text-rose-400'}
           `}>
             Saldo actual: ${client.balance.toLocaleString()}
           </div>

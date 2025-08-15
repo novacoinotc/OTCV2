@@ -54,7 +54,7 @@ const TransactionsView = ({ clients }) => {
       </div>
 
       {/* Filtros */}
-      <div className="bg-white shadow p-4 rounded-lg mb-4 space-y-4 md:space-y-0 md:grid md:grid-cols-3 gap-4">
+      <div className="bg-[#0e1628] shadow p-4 rounded-lg mb-4 space-y-4 md:space-y-0 md:grid md:grid-cols-3 gap-4">
         <input
           type="text"
           placeholder="Buscar por cliente"
@@ -102,10 +102,10 @@ const TransactionsView = ({ clients }) => {
       </div>
 
       {/* Tabla */}
-      <div className="bg-white shadow-lg rounded-xl p-4 overflow-x-auto">
+      <div className="bg-[#0e1628] shadow-lg rounded-xl p-4 overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-[#0c1220]">
               <th className="p-2 text-left">Cliente</th>
               <th className="p-2 text-left">Monto</th>
               <th className="p-2 text-left">Fecha</th>
@@ -115,7 +115,7 @@ const TransactionsView = ({ clients }) => {
           <tbody>
             {filteredTransactions.length === 0 ? (
               <tr>
-                <td colSpan="4" className="text-center text-gray-500 py-4">
+                <td colSpan="4" className="text-center text-slate-400 py-4">
                   No se encontraron resultados
                 </td>
               </tr>
@@ -123,7 +123,7 @@ const TransactionsView = ({ clients }) => {
               filteredTransactions.map((transaction, index) => (
                 <tr key={index} className="border-b">
                   <td className="p-2">{transaction.clientName}</td>
-                  <td className={`p-2 ${transaction.amount >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  <td className={`p-2 ${transaction.amount >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
                     ${transaction.amount.toLocaleString()}
                   </td>
                   <td className="p-2">{new Date(transaction.timestamp).toLocaleString()}</td>
@@ -136,9 +136,9 @@ const TransactionsView = ({ clients }) => {
       </div>
 
       {/* Resumen final */}
-      <div className="text-right mt-4 text-sm text-gray-600 space-y-1">
-        <div>Ingresos totales: <span className="text-green-600 font-semibold">${totalIngresos.toLocaleString()}</span></div>
-        <div>Egresos totales: <span className="text-red-600 font-semibold">${Math.abs(totalEgresos).toLocaleString()}</span></div>
+      <div className="text-right mt-4 text-sm text-slate-400 space-y-1">
+        <div>Ingresos totales: <span className="text-emerald-400 font-semibold">${totalIngresos.toLocaleString()}</span></div>
+        <div>Egresos totales: <span className="text-rose-400 font-semibold">${Math.abs(totalEgresos).toLocaleString()}</span></div>
         <div>Saldo disponible: <span className="font-bold">${saldoDisponible.toLocaleString()}</span></div>
       </div>
 

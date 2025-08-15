@@ -115,14 +115,14 @@ const ClientsDatabase = ({ clients, updateClients }) => {
           placeholder="Nombre del Cliente"
           value={newClient.name}
           onChange={(e) => setNewClient({ ...newClient, name: e.target.value })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+          className="w-full px-4 py-2 border border-white/10 rounded-lg"
         />
         <input
           type="number"
           placeholder="Saldo Inicial"
           value={newClient.balance}
           onChange={(e) => setNewClient({ ...newClient, balance: Number(e.target.value) })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+          className="w-full px-4 py-2 border border-white/10 rounded-lg"
         />
         <button
           onClick={handleAddClient}
@@ -133,11 +133,11 @@ const ClientsDatabase = ({ clients, updateClients }) => {
       </div>
 
       {sortedClients.length === 0 ? (
-        <div className="text-center py-10 text-gray-500">No hay clientes registrados</div>
+        <div className="text-center py-10 text-slate-400">No hay clientes registrados</div>
       ) : (
         <div className="overflow-x-auto rounded-xl shadow-lg">
-          <table className="min-w-full text-sm text-left text-gray-700 bg-white">
-            <thead className="bg-gray-100">
+          <table className="min-w-full text-sm text-left text-slate-300 bg-[#0e1628]">
+            <thead className="bg-[#0c1220]">
               <tr>
                 <th className="p-3">Nombre</th>
                 <th className="p-3">Saldo</th>
@@ -147,12 +147,12 @@ const ClientsDatabase = ({ clients, updateClients }) => {
             </thead>
             <tbody>
               {sortedClients.map(client => (
-                <tr key={client.id} className="border-t hover:bg-gray-50 transition">
+                <tr key={client.id} className="border-t hover:bg-[#0a0f1a] transition">
                   <td className="p-3 font-medium">{client.name}</td>
-                  <td className={`p-3 ${client.balance >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  <td className={`p-3 ${client.balance >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
                     ${client.balance.toLocaleString()}
                   </td>
-                  <td className="p-3 text-gray-500">
+                  <td className="p-3 text-slate-400">
                     {new Date(client.createdAt).toLocaleDateString()}
                   </td>
                   <td className="p-3 flex flex-wrap gap-2">
@@ -164,13 +164,13 @@ const ClientsDatabase = ({ clients, updateClients }) => {
                     </button>
                     <button
                       onClick={() => setHistoryClient(client)}
-                      className="text-green-600 hover:text-green-800"
+                      className="text-emerald-400 hover:text-green-800"
                     >
                       Historial
                     </button>
                     <button
                       onClick={() => handleDeleteClient(client.id)}
-                      className="text-red-600 hover:text-red-800"
+                      className="text-rose-400 hover:text-red-800"
                     >
                       Eliminar
                     </button>

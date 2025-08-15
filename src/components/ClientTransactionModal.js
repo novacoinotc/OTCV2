@@ -25,10 +25,10 @@ const ClientTransactionModal = ({ client, onClose, onTransaction }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl shadow-2xl w-96 p-6 relative">
+      <div className="bg-[#0e1628] rounded-2xl shadow-2xl w-96 p-6 relative">
         <button 
           onClick={onClose} 
-          className="absolute top-4 right-4 text-gray-500 hover:text-black transition-colors"
+          className="absolute top-4 right-4 text-slate-400 hover:text-black transition-colors"
         >
           ✕
         </button>
@@ -37,7 +37,7 @@ const ClientTransactionModal = ({ client, onClose, onTransaction }) => {
         </h2>
 
         <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Tipo de Transacción</label>
+          <label className="block text-slate-300 mb-2">Tipo de Transacción</label>
           <div className="flex space-x-2">
             {['deposit', 'withdraw'].map(type => (
               <button
@@ -47,7 +47,7 @@ const ClientTransactionModal = ({ client, onClose, onTransaction }) => {
                   px-4 py-2 rounded-full transition-all 
                   ${transaction.type === type
                     ? 'bg-black text-white'
-                    : 'text-gray-600 hover:bg-gray-200'
+                    : 'text-slate-400 hover:bg-gray-200'
                   }
                 `}
               >
@@ -58,24 +58,24 @@ const ClientTransactionModal = ({ client, onClose, onTransaction }) => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Monto</label>
+          <label className="block text-slate-300 mb-2">Monto</label>
           <input
             type="number"
             placeholder="Ingrese el monto"
             value={transaction.amount}
             onChange={(e) => setTransaction({ ...transaction, amount: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Concepto (Opcional)</label>
+          <label className="block text-slate-300 mb-2">Concepto (Opcional)</label>
           <input
             type="text"
             placeholder="Descripción del movimiento"
             value={transaction.concept}
             onChange={(e) => setTransaction({ ...transaction, concept: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
         </div>
 
