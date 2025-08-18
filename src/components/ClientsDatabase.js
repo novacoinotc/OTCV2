@@ -109,7 +109,7 @@ const ClientsDatabase = ({ clients, updateClients }) => {
   });
 
   return (
-    <div className="mt-4 px-2 text-slate-200">
+    <div className="mt-4 px-2">
       <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 mb-4">
         <input
           type="text"
@@ -127,7 +127,7 @@ const ClientsDatabase = ({ clients, updateClients }) => {
         />
         <button
           onClick={handleAddClient}
-          className="px-4 py-2 rounded-xl bg-[#1de9b6] text-black font-medium hover:opacity-90 transition"
+          className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
         >
           Añadir Cliente
         </button>
@@ -158,32 +158,12 @@ const ClientsDatabase = ({ clients, updateClients }) => {
                   </td>
                   
 <td className="p-3 relative">
-  <button
-    onClick={() => setOpenMenuId(openMenuId === client.id ? null : client.id)}
-    className="px-3 py-1.5 rounded-lg bg-[#0c1220] border border-white/10 text-slate-200 hover:text-white"
-  >
-    Acciones ▾
-  </button>
+  <button onClick={() => setOpenMenuId(openMenuId === client.id ? null : client.id)} className="px-3 py-1.5 rounded-lg bg-[#0c1220] border border-white/10 text-slate-200 hover:text-white">Acciones ▾</button>
   {openMenuId === client.id && (
     <div className="absolute right-3 mt-2 w-44 rounded-xl border border-white/10 bg-[#0e1628] shadow-lg overflow-hidden z-10">
-      <button
-        onClick={() => { setSelectedClient(client); setOpenMenuId(null); }}
-        className="w-full text-left px-3 py-2 text-slate-200 hover:bg-white/5"
-      >
-        Movimientos
-      </button>
-      <button
-        onClick={() => { setHistoryClient(client); setOpenMenuId(null); }}
-        className="w-full text-left px-3 py-2 text-slate-200 hover:bg-white/5"
-      >
-        Historial
-      </button>
-      <button
-        onClick={() => { setOpenMenuId(null); if (window.confirm('¿Eliminar este cliente y sus movimientos?')) handleDeleteClient(client.id); }}
-        className="w-full text-left px-3 py-2 text-rose-400 hover:bg-white/5"
-      >
-        Eliminar
-      </button>
+      <button onClick={() => { setSelectedClient(client); setOpenMenuId(null); }} className="w-full text-left px-3 py-2 text-slate-200 hover:bg-white/5">Movimientos</button>
+      <button onClick={() => { setHistoryClient(client); setOpenMenuId(null); }} className="w-full text-left px-3 py-2 text-slate-200 hover:bg-white/5">Historial</button>
+      <button onClick={() => { setOpenMenuId(null); if (window.confirm('¿Eliminar este cliente y sus movimientos?')) handleDeleteClient(client.id); }} className="w-full text-left px-3 py-2 text-rose-400 hover:bg-white/5">Eliminar</button>
     </div>
   )}
 </td>
