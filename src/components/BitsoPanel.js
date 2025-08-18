@@ -58,7 +58,7 @@ export default function BitsoPanel() {
   }, [API_KEY, API_SECRET]);
 
   return (
-    <div className="bg-[#0e1628] shadow-lg rounded-xl p-4">
+    <div className="bg-white shadow-lg rounded-xl p-4">
       <h2 className="text-xl font-bold mb-4">Bitso · Tu Saldo</h2>
 
       {error && (

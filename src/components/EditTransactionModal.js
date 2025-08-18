@@ -29,17 +29,17 @@ const EditTransactionModal = ({ transaction, client, onClose, onUpdate, onDelete
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-[#0e1628] rounded-2xl shadow-2xl w-96 p-6 relative">
+      <div className="bg-white rounded-2xl shadow-2xl w-96 p-6 relative">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-slate-400 hover:text-black transition-colors"
+          className="absolute top-4 right-4 text-gray-500 hover:text-black transition-colors"
         >
           ✕
         </button>
         <h2 className="text-2xl font-bold mb-6 text-center">Editar Movimiento</h2>
 
         <div className="mb-4">
-          <label className="block text-slate-300 mb-2">Tipo de Transacción</label>
+          <label className="block text-gray-700 mb-2">Tipo de Transacción</label>
           <div className="flex space-x-2">
             {['deposit', 'withdraw'].map((type) => (
               <button
@@ -49,7 +49,7 @@ const EditTransactionModal = ({ transaction, client, onClose, onUpdate, onDelete
                   px-4 py-2 rounded-full transition-all 
                   ${editedTransaction.type === type
                     ? 'bg-black text-white'
-                    : 'text-slate-400 hover:bg-gray-200'
+                    : 'text-gray-600 hover:bg-gray-200'
                   }
                 `}
               >
@@ -60,7 +60,7 @@ const EditTransactionModal = ({ transaction, client, onClose, onUpdate, onDelete
         </div>
 
         <div className="mb-4">
-          <label className="block text-slate-300 mb-2">Monto</label>
+          <label className="block text-gray-700 mb-2">Monto</label>
           <input
             type="number"
             value={editedTransaction.amount}
@@ -70,12 +70,12 @@ const EditTransactionModal = ({ transaction, client, onClose, onUpdate, onDelete
                 amount: Number(e.target.value)
               })
             }
-            className="w-full px-4 py-3 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-slate-300 mb-2">Concepto (Opcional)</label>
+          <label className="block text-gray-700 mb-2">Concepto (Opcional)</label>
           <input
             type="text"
             placeholder="Descripción del movimiento"
@@ -86,12 +86,12 @@ const EditTransactionModal = ({ transaction, client, onClose, onUpdate, onDelete
                 concept: e.target.value
               })
             }
-            className="w-full px-4 py-3 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-slate-300 mb-2">Fecha</label>
+          <label className="block text-gray-700 mb-2">Fecha</label>
           <input
             type="datetime-local"
             value={new Date(editedTransaction.timestamp).toISOString().slice(0, 16)}
@@ -101,7 +101,7 @@ const EditTransactionModal = ({ transaction, client, onClose, onUpdate, onDelete
                 timestamp: new Date(e.target.value).toISOString()
               })
             }
-            className="w-full px-4 py-3 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
         </div>
 

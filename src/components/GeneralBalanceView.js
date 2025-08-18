@@ -3,16 +3,16 @@ import React from 'react';
 const ClientBalanceCard = ({ client }) => {
   return (
     <div className={`
-      bg-[#0e1628] rounded-xl shadow-lg p-4 transition-all 
+      bg-white rounded-xl shadow-md p-4 transition-all 
       hover:shadow-lg hover:scale-[1.02]
-      ${client.balance >= 0 ? 'border-l-4 border-emerald-500' : 'border-l-4 border-rose-500'}
+      ${client.balance >= 0 ? 'border-l-4 border-green-500' : 'border-l-4 border-red-500'}
     `}>
       <div className="flex justify-between items-center">
         <div>
-          <h3 className="text-lg font-semibold text-slate-200">{client.name}</h3>
+          <h3 className="text-lg font-semibold text-gray-800">{client.name}</h3>
           <p className={`
             text-2xl font-bold mt-2
-            ${client.balance >= 0 ? 'text-emerald-400' : 'text-rose-400'}
+            ${client.balance >= 0 ? 'text-green-600' : 'text-red-600'}
           `}>
             ${client.balance.toLocaleString()}
           </p>
@@ -28,7 +28,7 @@ const ClientBalanceCard = ({ client }) => {
           </span>
         </div>
       </div>
-      <div className="mt-4 text-sm text-slate-400">
+      <div className="mt-4 text-sm text-gray-500">
         <p>Transacciones: {client.transactions.length}</p>
         <p>Registrado: {new Date(client.createdAt).toLocaleDateString()}</p>
       </div>
@@ -50,32 +50,32 @@ const GeneralBalanceView = ({ clients }) => {
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
         {/* Saldo Disponible */}
-        <div className="bg-[#0e1628] shadow-lg rounded-xl p-6 text-center">
-          <h3 className="text-xl font-semibold text-slate-300">Saldo Disponible</h3>
-          <p className={`text-3xl font-bold ${totalBalance >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+        <div className="bg-white shadow-lg rounded-xl p-6 text-center">
+          <h3 className="text-xl font-semibold text-gray-700">Saldo Disponible</h3>
+          <p className={`text-3xl font-bold ${totalBalance >= 0 ? 'text-green-600' : 'text-red-600'}`}>
             ${totalBalance.toLocaleString()}
           </p>
         </div>
 
         {/* Fondo Total */}
-        <div className="bg-[#0e1628] shadow-lg rounded-xl p-6 text-center">
-          <h3 className="text-xl font-semibold text-slate-300">Fondo Total</h3>
+        <div className="bg-white shadow-lg rounded-xl p-6 text-center">
+          <h3 className="text-xl font-semibold text-gray-700">Fondo Total</h3>
           <p className="text-3xl font-bold text-yellow-500">
             ${totalFund.toLocaleString()} {/* AUTPW */}
           </p>
         </div>
 
         {/* Total Préstamos */}
-        <div className="bg-[#0e1628] shadow-lg rounded-xl p-6 text-center">
-          <h3 className="text-xl font-semibold text-slate-300">Total Préstamos</h3>
-          <p className="text-3xl font-bold text-rose-400">
+        <div className="bg-white shadow-lg rounded-xl p-6 text-center">
+          <h3 className="text-xl font-semibold text-gray-700">Total Préstamos</h3>
+          <p className="text-3xl font-bold text-red-600">
             ${totalPrestamosAbsoluto.toLocaleString()}
           </p>
         </div>
       </div>
 
-      <div className="bg-[#0e1628] shadow-lg rounded-xl p-6">
-        <h2 className="text-2xl font-bold mb-6 text-slate-200">Saldo por Cliente</h2>
+      <div className="bg-white shadow-lg rounded-xl p-6">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Saldo por Cliente</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {clients.map(client => (
             <div key={client.id} className="min-w-0">

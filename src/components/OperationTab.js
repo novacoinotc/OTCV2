@@ -118,7 +118,7 @@ export default function OperationTab() {
               onChange={e => setDepositRaw(e.target.value)}
               onBlur={handleBlur}
               onFocus={handleFocus}
-              className="w-28 px-2 py-1 rounded border border-white/10 bg-[#0e1628] text-black text-center"
+              className="w-28 px-2 py-1 rounded border border-gray-300 bg-white text-black text-center"
             />
           </div>
           <div className="flex justify-center items-center gap-2">
@@ -127,7 +127,7 @@ export default function OperationTab() {
               type="number"
               value={tcRaw}
               onChange={e => setTcRaw(e.target.value)}
-              className="w-28 px-2 py-1 rounded border border-white/10 bg-[#0e1628] text-black text-center"
+              className="w-28 px-2 py-1 rounded border border-gray-300 bg-white text-black text-center"
             />
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function OperationTab() {
           <select
             value={operator}
             onChange={e => setOperator(e.target.value)}
-            className="w-32 px-2 py-1 rounded border border-white bg-[#0e1628] text-black text-center"
+            className="w-32 px-2 py-1 rounded border border-white bg-white text-black text-center"
           >
             {OPERATORS.map(o =>
               <option key={o.name}>{o.name}</option>
@@ -179,7 +179,7 @@ export default function OperationTab() {
               onChange={e => setDepositRaw(e.target.value)}
               onBlur={handleBlur}
               onFocus={handleFocus}
-              className="w-28 px-2 py-1 rounded border border-white bg-[#0e1628] text-black text-center"
+              className="w-28 px-2 py-1 rounded border border-white bg-white text-black text-center"
             />
           </div>
           <div className="flex justify-center items-center gap-2">
@@ -188,12 +188,12 @@ export default function OperationTab() {
               type="number"
               value={tcRaw}
               onChange={e => setTcRaw(e.target.value)}
-              className="w-28 px-2 py-1 rounded border border-white bg-[#0e1628] text-black text-center"
+              className="w-28 px-2 py-1 rounded border border-white bg-white text-black text-center"
             />
           </div>
         </div>
 
-        <div className="text-sm bg-[#0e1628] bg-opacity-30 p-2 rounded space-y-1">
+        <div className="text-sm bg-white bg-opacity-30 p-2 rounded space-y-1">
           <div>Precio spot: ${tcNum.toFixed(3)}</div>
           <div>Costo final: ${(tcNum + offsetDisplay).toFixed(3)}</div>
           <div>Costo de red: {NETWORK_COST} USDT</div>
@@ -233,10 +233,10 @@ export default function OperationTab() {
             placeholder="Folio..."
             value={filterFolio}
             onChange={e => setFilterFolio(e.target.value)}
-            className="flex-1 border px-2 py-1 rounded bg-[#0e1628] text-black"
+            className="flex-1 border px-2 py-1 rounded bg-white text-black"
           />
           <select
-            className="flex-1 border px-2 py-1 rounded bg-[#0e1628] text-black"
+            className="flex-1 border px-2 py-1 rounded bg-white text-black"
             value={filterMode}
             onChange={e => setFilterMode(e.target.value)}
           >
@@ -245,7 +245,7 @@ export default function OperationTab() {
             <option value="operador">Operador</option>
           </select>
           <select
-            className="flex-1 border px-2 py-1 rounded bg-[#0e1628] text-black"
+            className="flex-1 border px-2 py-1 rounded bg-white text-black"
             value={filterOperator}
             onChange={e => setFilterOperator(e.target.value)}
           >

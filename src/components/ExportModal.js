@@ -14,10 +14,10 @@ const ExportModal = ({ transactions, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-[#0e1628] rounded-2xl shadow-2xl w-96 p-6 relative">
+      <div className="bg-white rounded-2xl shadow-2xl w-96 p-6 relative">
         <button 
           onClick={onClose} 
-          className="absolute top-4 right-4 text-slate-400 hover:text-black transition-colors"
+          className="absolute top-4 right-4 text-gray-500 hover:text-black transition-colors"
         >
           ✕
         </button>
